@@ -4,7 +4,6 @@ import ChatInput from './ChatInput';
 import ChatHeader from './ChatHeader';
 import ImageUpload from './ImageUpload';
 import ExpertConnect from './ExpertConnect';
-import VoiceAssistant from './VoiceAssistant';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -71,7 +70,6 @@ const ChatBot = () => {
   const [showSuggestions, setShowSuggestions] = useState(true);
   const [showImageUpload, setShowImageUpload] = useState(false);
   const [showExpertConnect, setShowExpertConnect] = useState(false);
-  const [showVoiceAssistant, setShowVoiceAssistant] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
@@ -242,16 +240,7 @@ const ChatBot = () => {
         </div>
       </ScrollArea>
 
-      <ChatInput 
-        onSendMessage={handleSendMessage} 
-        isLoading={isLoading}
-        onVoiceClick={() => setShowVoiceAssistant(true)}
-      />
-      
-      <VoiceAssistant 
-        isOpen={showVoiceAssistant}
-        onClose={() => setShowVoiceAssistant(false)}
-      />
+      <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
     </div>
   );
 };
