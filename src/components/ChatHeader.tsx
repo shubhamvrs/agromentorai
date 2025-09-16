@@ -7,11 +7,16 @@ const ChatHeader = () => {
         <div className="bg-primary-foreground/10 p-2 rounded-full">
           <Sprout className="h-6 w-6" />
         </div>
-        <div>
-          <h1 className="text-xl font-bold">കൃഷി സഹായി (Krishi Sahaayi)</h1>
+        <div className="flex-1">
+          <h1 className="text-xl font-bold">AgroMentorAi</h1>
           <p className="text-primary-foreground/80 text-sm">
-            Your Multilingual Farming Assistant • Malayalam | English | Hindi
+            Your Smart Farming Assistant • Malayalam | English | Hindi
           </p>
+          <div className="flex gap-3 mt-1">
+            <span className="text-xs bg-primary-foreground/20 px-2 py-1 rounded-full">📱 WhatsApp Ready</span>
+            <span className="text-xs bg-primary-foreground/20 px-2 py-1 rounded-full">🔌 Works Offline</span>
+            <span className="text-xs bg-primary-foreground/20 px-2 py-1 rounded-full">👨‍🌾 Local Experts</span>
+          </div>
         </div>
       </div>
     </div>
