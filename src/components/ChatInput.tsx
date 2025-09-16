@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Send } from 'lucide-react';
+import { Send, Mic } from 'lucide-react';
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
   isLoading: boolean;
+  onVoiceClick: () => void;
 }
 
-const ChatInput = ({ onSendMessage, isLoading }: ChatInputProps) => {
+const ChatInput = ({ onSendMessage, isLoading, onVoiceClick }: ChatInputProps) => {
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -28,6 +29,16 @@ const ChatInput = ({ onSendMessage, isLoading }: ChatInputProps) => {
         className="flex-1 border-border focus:ring-primary text-base"
         disabled={isLoading}
       />
+      <Button 
+        type="button"
+        size="icon" 
+        variant="outline"
+        className="shrink-0"
+        onClick={onVoiceClick}
+        disabled={isLoading}
+      >
+        <Mic className="h-4 w-4" />
+      </Button>
       <Button 
         type="submit" 
         size="icon" 
